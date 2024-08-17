@@ -12,8 +12,8 @@ As solicitações podem ocorrer em cada um dos processadores, ou seja, o process
 
 A representação da memória e das caches devem ser similares as representações abaixo:
 
-<img src="https://github.com/user-attachments/assets/cc80cd70-d25a-483d-a9fb-dd24c31d2037" height="300px" width="auto"/>
-<img src="https://github.com/user-attachments/assets/9b741f3b-ddba-40bf-aa4c-a1c082c8b873" height="200px" width="auto"/>
+<img src="https://github.com/user-attachments/assets/cc80cd70-d25a-483d-a9fb-dd24c31d2037" height="300px" width="auto" align="center"/>
+<img src="https://github.com/user-attachments/assets/9b741f3b-ddba-40bf-aa4c-a1c082c8b873" height="200px" width="auto" align="center"/>
 
 
 O programa no seu início deve preencher o espaço da memória principal com valores aleatórios (numéricos, alfa numéricos, ou outras informações de acordo com a aplicação). Em seguida, o programa deve possibilitar ao usuário selecionar um processador, e realizar a solicitação de um dado da memória principal, sendo essa solicitação com ou sem alteração de seu valor (leitura ou escrita).
