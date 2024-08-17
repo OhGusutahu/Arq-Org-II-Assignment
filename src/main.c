@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "cache.h"
-
-/*
- * There's still (per ChatGPT):
- * RAM memory (memory.c?)
- * MESI protocol
- * Definir processadores
- */
+#include "memory.h"
 
 // Functions if needed
 
