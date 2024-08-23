@@ -16,7 +16,7 @@
 16|O Apanhador no Campo de Centeio|J.D. Salinger|1951
 17|A Culpa é das Estrelas|John Green|2012
 18|O Grande Gatsby|F. Scott Fitzgerald|1925
-19|Beloved|Toni Morrison|1987-09-16
+19|Beloved|Toni Morrison|1987
 20|O Nome do Vento|Patrick Rothfuss|2007
 21|O Silmarillion|J.R.R. Tolkien|1977
 22|O Guia do Mochileiro das Galáxias|Douglas Adams|1979
