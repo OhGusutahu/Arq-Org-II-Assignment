@@ -4,6 +4,9 @@
 #include "cache.h"
 #include "memory.h"
 
+Processor processors[PROC_SIZE];
+Memory memory;
+
 // Functions if needed
 
 int main(int argc, char *argv[]) {
@@ -16,6 +19,9 @@ int main(int argc, char *argv[]) {
         perror(NULL);
         exit(EXIT_FAILURE);
         }
+        // inicializa a memória e os processadores
+        initMemory(arq_dados);
+        initProcessors();
         // smth smth
 
     } else {
