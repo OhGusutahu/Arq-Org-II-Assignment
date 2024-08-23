@@ -1,0 +1,50 @@
+01|O Hobbit|J.R.R. Tolkien|1937
+02|1984|George Orwell|1949
+03|Dom Casmurro|Machado de Assis|1899
+04|A Guerra dos Tronos|George R.R. Martin|1996
+05|Cem Anos de Solidão|Gabriel García Márquez|1967
+06|O Senhor dos Anéis: A Sociedade do Anel|J.R.R. Tolkien|1954
+07|Orgulho e Preconceito|Jane Austen|1813
+08|O Pequeno Príncipe|Antoine de Saint-Exupéry|1943
+09|Moby Dick|Herman Melville|1851
+10|A Revolução dos Bichos|George Orwell|1945
+11|O Código Da Vinci|Dan Brown|2003
+12|A Menina que Roubava Livros|Markus Zusak|2005
+13|Harry Potter e a Pedra Filosofal|J.K. Rowling|1997
+14|O Sol é para Todos|Harper Lee|1960
+15|O Morro dos Ventos Uivantes|Emily Brontë|1847
+16|O Apanhador no Campo de Centeio|J.D. Salinger|1951
+17|A Culpa é das Estrelas|John Green|2012
+18|O Grande Gatsby|F. Scott Fitzgerald|1925
+19|Beloved|Toni Morrison|1987-09-16
+20|O Nome do Vento|Patrick Rothfuss|2007
+21|O Silmarillion|J.R.R. Tolkien|1977
+22|O Guia do Mochileiro das Galáxias|Douglas Adams|1979
+23|O Senhor dos Anéis: As Duas Torres|J.R.R. Tolkien|1954
+24|O Senhor dos Anéis: O Retorno do Rei|J.R.R. Tolkien|1955
+25|Frankenstein|Mary Shelley|1818
+26|O Hobbit|J.R.R. Tolkien|1937
+27|O Casamento de Figaro|Pierre-Augustin Beaumarchais|1784
+28|A Divina Comédia|Dante Alighieri|1320
+29|Don Quixote|Miguel de Cervantes|1605
+30|A Dama das Camélias|Alexandre Dumas Filho|1848
+31|O Retrato de Dorian Gray|Oscar Wilde|1890
+32|O Estrangeiro|Albert Camus|1942
+33|O Perfume|Patrick Süskind|1985
+34|A Cidade e as Serras|Eça de Queirós|1901
+35|A Ilha do Tesouro|Robert Louis Stevenson|1883
+36|O Homem Invisível|H.G. Wells|1897
+37|O Lobo da Estepe|Hermann Hesse|1927
+38|O Pequeno Príncipe|Antoine de Saint-Exupéry|1943
+39|Drácula|Bram Stoker|1897
+40|O Grande Gatsby|F. Scott Fitzgerald|1925
+41|As Aventuras de Sherlock Holmes|Arthur Conan Doyle|1892
+42|O Sol é para Todos|Harper Lee|1960
+43|O Amor nos Tempos do Cólera|Gabriel García Márquez|1985
+44|Os Miseráveis|Victor Hugo|1862
+45|O Senhor das Moscas|William Golding|1954
+46|O Código Da Vinci|Dan Brown|2003
+47|O Nome da Rosa|Umberto Eco|1980
+48|A Festa de Casamento|Jorge Amado|1966
+49|O Tempo e o Medo|Gabriel Garcia Marquez|1982
+50|A Casa dos Espíritos|Isabel Allende|1982
