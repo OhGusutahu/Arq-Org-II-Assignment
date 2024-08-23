@@ -7,7 +7,7 @@
  * struct processor
  * 
  * cache.c functions declarations
- */
+**/
 
 #define CACHE_SIZE 5 // quantidade mínima de posições da cache
 #define PROC_SIZE 3 // quantidade mínima de processadores
@@ -33,16 +33,21 @@ extern Processor processors[PROC_SIZE];
 Cache initCache();
 /*
  * Função para inicializar o cache
-*/
+**/
+
+void initProcessors();
+/*
+ * Função para inicializar os processadores
+**/
 
 int read_data(int proc_id, int ram_pos);
 /*
  * Função para simular a leitura de um dado
-*/
+**/
 
 int write_data(int proc_id, int ram_pos, char *new_data);
 /*
  * Função para simular a escrita de um dado
-*/
+**/
 
 #endif // CACHE_H_INCLUDED
