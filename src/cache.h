@@ -1,6 +1,8 @@
 #ifndef CACHE_H_INCLUDED
 #define CACHE_H_INCLUDED
 
+#include "memory.h" // para usar "BLOCK_SIZE"
+
 /* Definitions:
  * struct cachePos
  * struct cache
