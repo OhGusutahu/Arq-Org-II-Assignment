@@ -19,7 +19,9 @@ typedef struct {
     RAM ram[RAM_SIZE];
 } Memory; // struct da memória principal
 
-Memory initMemory(FILE *arq);
+extern Memory memory;
+
+void initMemory(FILE *arq);
 /*
  * Função para inicializar a memória principal
 **/
