@@ -97,7 +97,7 @@ int get_FIFO_index(int proc_id) {
     Cache *cache = &processors[proc_id].cache;
     int index = FIFO_index[proc_id];
 
-    // Verifica a necessidade de write-back
+    // Verifica a necessidade de write-back quando a cache está cheia
     if(cache->positions[index].state == MODIFIED) {
         int ram_pos = cache->positions[index].tag;
         strcpy(memory.ram[ram_pos].data, cache->positions[index].data);
@@ -118,19 +118,32 @@ int read_data(int proc_id, int ram_pos) {
     int line_id = find_cache_line(cache, tag);
     if(line_id != -1) {
         // RH
+        printf("OPERACAO:\n");
         printf("Processor %d:RH em tag: %d\n", proc_id, tag);
         print_state(cache->positions[line_id].state);
         print_data(cache->positions[line_id].data);
     } else {
         // RM
-        printf("Processor %d:RM em tag: %d\n", proc_id, tag);
-        
+
         // verificar se o dado está presente em outra cache
         int is_shared = 0; // 0 == não, 1 == sim
         for(int i = 0; i < PROC_SIZE; i++) {
             if(i != proc_id) { // pular a própria cache
                 int other_line_id = find_cache_line(&processors[i].cache, tag);
                 if(other_line_id != -1) {
+                    // write-back caso outro processador tenha o dado em MODIFIED
+                    if(processors[i].cache.positions[other_line_id].state == MODIFIED) {
+                        strcpy(memory.ram[ram_pos].data, processors[i].cache.positions[other_line_id].data);
+                        printf("Processor %d: Write-Back em tag: %d\n", proc_id, ram_pos);
+                        print_data(memory.ram[ram_pos].data);
+                        printf("----------\n");
+                    }
+
+                    processors[i].cache.positions[other_line_id].state = SHARED;
+                    printf("ESTADO ALTERADO:\n");
+                    printf("Processor %d: tag: %d\n", i, tag);
+                    print_state(processors[i].cache.positions[other_line_id].state);
+                    printf("----------\n");
                     is_shared = 1;
                 }
             }
@@ -147,6 +160,8 @@ int read_data(int proc_id, int ram_pos) {
         if(is_shared == 0) line->state = EXCLUSIVE;
         else line->state = SHARED;
 
+        printf("OPERACAO:\n");
+        printf("Processor %d:RM em tag: %d\n", proc_id, tag);
         print_state(cache->positions[replace_id].state);
         print_data(cache->positions[replace_id].data);
     }
@@ -164,7 +179,7 @@ int write_data(int proc_id, int ram_pos, char *new_data) {
     if(line_id != -1) {
         // WH
         if(cache->positions[line_id].state == SHARED) {
-            cache->positions[line_id].state == MODIFIED;
+            cache->positions[line_id].state = MODIFIED;
 
             // Verificar em qual cache o dado está presente
             for(int i = 0; i < PROC_SIZE; i++) {
@@ -172,26 +187,28 @@ int write_data(int proc_id, int ram_pos, char *new_data) {
                     int other_line_id = find_cache_line(&processors[i].cache, tag);
                     if(other_line_id != -1) {
                         processors[i].cache.positions[other_line_id].state = INVALID;
+                        printf("ESTADO ALTERADO:\n");
                         printf("Processor %d: tag: %d\n", i, tag);
                         print_state(processors[i].cache.positions[other_line_id].state);
+                        printf("----------\n");
                     }
                 }
             }
 
         } else if(cache->positions[line_id].state == EXCLUSIVE) {
-            cache->positions[line_id].state == MODIFIED;
+            cache->positions[line_id].state = MODIFIED;
         }
 
         // escreve o novo dado na cache
         strcpy(cache->positions[line_id].data, new_data);
 
+        printf("OPERACAO:\n");
         printf("Processor %d:WH em tag: %d\n", proc_id, tag);
         print_state(cache->positions[line_id].state);
         print_data(cache->positions[line_id].data);
 
     } else {
         // WM
-        printf("Processor %d:WM em tag: %d\n", proc_id, tag);
 
         // Atualizar a cache
         int replace_id = get_FIFO_index(proc_id);
@@ -209,8 +226,10 @@ int write_data(int proc_id, int ram_pos, char *new_data) {
                 int other_line_id = find_cache_line(&processors[i].cache, tag);
                 if(other_line_id != -1) {
                     processors[i].cache.positions[other_line_id].state = INVALID;
+                    printf("ESTADO ALTERADO:\n");
                     printf("Processor %d: tag: %d\n", i, tag);
                     print_state(processors[i].cache.positions[other_line_id].state);
+                    printf("----------\n");
                 }
             }
         }
@@ -218,6 +237,8 @@ int write_data(int proc_id, int ram_pos, char *new_data) {
         // escreve o novo dado na cache
         strcpy(line->data, new_data);
 
+        printf("OPERACAO:\n");
+        printf("Processor %d:WM em tag: %d\n", proc_id, tag);
         print_state(line->state);
         print_data(line->data);
 
