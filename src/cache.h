@@ -42,6 +42,16 @@ void initProcessors();
  * Função para inicializar os processadores
 **/
 
+void print_state(MesiState state);
+/*
+ * Função para printar o estado do bloco na cache
+**/
+
+void print_data(char *data);
+/*
+ * Função para printar um bloco de data
+**/
+
 int read_data(int proc_id, int ram_pos);
 /*
  * Função para simular a leitura de um dado
